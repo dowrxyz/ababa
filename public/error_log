@@ -1,0 +1,2 @@
+[22-Feb-2023 10:58:41 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.28. in /home2/thedibb4/public_html/panel/vendor/composer/platform_check.php on line 24
+[22-Feb-2023 10:59:04 America/Boise] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.1.0". You are running 8.0.28. in /home2/thedibb4/public_html/panel/vendor/composer/platform_check.php on line 24
