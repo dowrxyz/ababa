@@ -40,6 +40,21 @@ class Socio extends Authenticatable
         if($value == 4){
             $valor = ['id' => $value, 'value' => 'Fallecido', 'color' => 'danger' ];
         }
+        if($value == 5){
+            $valor = ['id' => $value, 'value' => 'Cuenta cancelada', 'color' => 'danger' ];
+        }
+        if($value == 6){
+            $valor = ['id' => $value, 'value' => 'Cuenta inactiva', 'color' => 'danger' ];
+        }
+        if($value == 7){
+            $valor = ['id' => $value, 'value' => 'Cuenta no corresponde', 'color' => 'danger' ];
+        }
+        if($value == 8){
+            $valor = ['id' => $value, 'value' => 'Expuldao', 'color' => 'danger' ];
+        }
+        if($value == 9){
+            $valor = ['id' => $value, 'value' => 'Suspendido', 'color' => 'danger' ];
+        }
 
         return $this->attributes['estado_data'] = $valor;
     }

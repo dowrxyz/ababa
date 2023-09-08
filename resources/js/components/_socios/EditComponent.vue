@@ -257,6 +257,11 @@ export default {
                 { id: 2, nombre: "Inactivo" },
                 { id: 3, nombre: "Bloqueado" },
                 { id: 4, nombre: "Fallecido" },
+                { id: 5, nombre: "Cuenta cancelada" },
+                { id: 6, nombre: "Cuenta inactiva" },
+                { id: 7, nombre: "Cuenta no corresponde" },
+                { id: 8, nombre: "Expulsado" },
+                { id: 9, nombre: "Suspendido" },
             ],
             pagos: [
                 { id: 1, nombre: "Cancelado" },

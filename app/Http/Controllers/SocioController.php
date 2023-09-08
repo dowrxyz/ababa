@@ -168,6 +168,46 @@ class SocioController extends Controller
                 ->paginate(25);
         }
 
+        //Cuenta cancelada
+        if (Auth::user()->tipo_socio == 9) {
+            $socio = Socio::with("banco", "creador")
+                ->where("estado", 5)
+                ->orderBy("id", "DESC")
+                ->paginate(25);
+        }
+
+        //Cuenta inactiva
+        if (Auth::user()->tipo_socio == 10) {
+            $socio = Socio::with("banco", "creador")
+                ->where("estado", 6)
+                ->orderBy("id", "DESC")
+                ->paginate(25);
+        }
+
+        //Cuenta no corresponde
+        if (Auth::user()->tipo_socio == 11) {
+            $socio = Socio::with("banco", "creador")
+                ->where("estado", 7)
+                ->orderBy("id", "DESC")
+                ->paginate(25);
+        }
+
+        //Expulsado
+        if (Auth::user()->tipo_socio == 12) {
+            $socio = Socio::with("banco", "creador")
+                ->where("estado", 8)
+                ->orderBy("id", "DESC")
+                ->paginate(25);
+        }
+
+        //Suspendido
+        if (Auth::user()->tipo_socio == 13) {
+            $socio = Socio::with("banco", "creador")
+                ->where("estado", 9)
+                ->orderBy("id", "DESC")
+                ->paginate(25);
+        }
+
         return [
             "pagination" => [
                 "total" => $socio->total(),
