@@ -1,0 +1,37 @@
+
+
+Sat Sep  9 11:53:57 2023
+Command line: TestDisk
+
+TestDisk 7.2-WIP, Data Recovery Utility, August 2023
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 6.4.12-1-MANJARO (#1 SMP PREEMPT_DYNAMIC Thu Aug 24 17:37:05 UTC 2023) x86_64
+Compiler: GCC 13.2
+ext2fs lib: 1.47.0, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.4
+User is not root!
+Hard disk list
+
+
+TestDisk exited normally.
+Using locale 'es_MX.UTF-8'.
+
+
+Sat Sep  9 11:53:57 2023
+Command line: TestDisk /debug
+
+TestDisk 7.2-WIP, Data Recovery Utility, August 2023
+Christophe GRENIER <grenier@cgsecurity.org>
+https://www.cgsecurity.org
+OS: Linux, kernel 6.4.12-1-MANJARO (#1 SMP PREEMPT_DYNAMIC Thu Aug 24 17:37:05 UTC 2023) x86_64
+Compiler: GCC 13.2
+ext2fs lib: 1.47.0, ntfs lib: libntfs-3g, reiserfs lib: none, ewf lib: none, curses lib: ncurses 6.4
+/dev/sda: LBA, LBA48 support
+/dev/sda: size       500118192 sectors
+/dev/sda: user_max   500118192 sectors
+Warning: can't get size for Disk /dev/mapper/control - 0 B - 0 sectors, sector size=512
+Hard disk list
+Disk /dev/sda - 256 GB / 238 GiB - CHS 31130 255 63, sector size=512 - SPCC Solid State Disk, S/N:YTAJ211225573, FW:H201230
+
+SIGINT detected! PhotoRec has been killed.
+SIGHUP detected! PhotoRec has been killed.

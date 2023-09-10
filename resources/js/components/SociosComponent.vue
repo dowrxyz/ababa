@@ -68,7 +68,6 @@
         list_aporte: false,
         aportes: [],
         dependiente: true,
-        editando: "",
         edit_aporte: false,
         pagination: {
           total: 0,

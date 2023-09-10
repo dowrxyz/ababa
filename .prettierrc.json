@@ -11,13 +11,11 @@
   "htmlWhitespaceSensitivity": "css",
   "vueIndentScriptAndStyle": true,
   "proseWrap": "preserve",
-  "insertPragma": false,
   "printWidth": 80,
-  "requirePragma": true,
   "tabWidth": 2,
   "useTabs": false,
   "embeddedLanguageFormatting": "auto",
-  "plugins": ["@shufo/prettier-plugin-blade"],
+  "plugins": ["@shufo/prettier-plugin-blade", "@prettier/plugin-php"],
   "overrides": [
     {
       "files": ["*.blade.php"],

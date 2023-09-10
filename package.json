@@ -11,6 +11,7 @@
     },
     "devDependencies": {
         "@popperjs/core": "^2.10.2",
+        "@prettier/plugin-php": "^0.20.1",
         "@shufo/prettier-plugin-blade": "^1.11.1",
         "@typescript-eslint/eslint-plugin": "^6.6.0",
         "@typescript-eslint/parser": "^6.6.0",

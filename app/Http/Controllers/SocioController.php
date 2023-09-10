@@ -58,6 +58,7 @@ class SocioController extends Controller
       $socio->movil_referencia = $request->movil_referencia;
       $socio->fuerza = $request->fuerza;
       $socio->estado = $request->estado;
+      $socio->tipo = $request->tipo;
       $socio->observacion = $request->observaciones;
       $socio->mies = $request->mies;
       $socio->mt = $request->mt;
@@ -503,6 +504,12 @@ class SocioController extends Controller
       $pago = $request->pago;
     }
 
+    if (is_array($request->tipo)) {
+      $tipo = $request->tipo;
+    } else {
+      $tipo = $request->tipo;
+    }
+
     $socio = Socio::find($request->id);
     $socio->tipo_documento = $request->tipo_documento;
     $socio->documento = $request->documento;
@@ -518,6 +525,7 @@ class SocioController extends Controller
     $socio->movil_referencia = $request->movil_referencia;
     $socio->fuerza = $fuerza;
     $socio->estado = $estado;
+    $socio->tipo = $tipo;
     $socio->observacion = $request->observacion;
     $socio->mies = $request->mies;
     $socio->mt = $request->mt;

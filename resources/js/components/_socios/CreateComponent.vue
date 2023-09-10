@@ -97,6 +97,25 @@
               </el-option>
             </el-select>
           </el-col>
+
+          <!-- tipo -->
+          <el-col :span="6">
+            <el-select
+              class="w-100"
+              v-model="tipo"
+              placeholder="Tipo"
+              :filterable="true"
+            >
+              <el-option
+                v-for="item in tipos"
+                :key="item.id"
+                :label="item.nombre"
+                :value="item.id"
+              >
+              </el-option>
+            </el-select>
+          </el-col>
+
           <el-col :span="6">
             <el-upload
               class="upload-demo"
@@ -204,6 +223,12 @@
           { id: 3, nombre: "Bloqueado" },
           { id: 4, nombre: "Fallecido" },
         ],
+        tipos: [
+          { id: 1, nombre: "Militar activo" },
+          { id: 2, nombre: "Militar pasivo" },
+          { id: 3, nombre: "Policia activo" },
+          { id: 4, nombre: "Policica pasivo" },
+        ],
         fuerza: "",
         mies: false,
         mt: false,
@@ -225,6 +250,7 @@
         perfil: "",
         pdf: "",
         estado: "",
+        tipo: 1,
         type_user: $("#type_user").val(),
       };
     },
@@ -261,12 +287,13 @@
           pdf: this.pdf,
           fuerza: this.fuerza,
           estado: this.estado,
+          tipo: this.tipo,
           mies: this.mies,
           mt: this.mt,
           user_id: $("#usuario_id").val(),
         };
 
-        console.log(params);
+        // console.log(params);
 
         axios.post("/api/socios", params).then((response) => {
           console.log(response.data);

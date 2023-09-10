@@ -100,6 +100,25 @@
             </el-option>
           </el-select>
         </el-col>
+
+        <!-- tipo -->
+        <el-col :span="6">
+          <el-select
+            class="w-100"
+            v-model="editando.tipo"
+            placeholder="Tipo"
+            :filterable="true"
+          >
+            <el-option
+              v-for="item in tipos"
+              :key="item.id"
+              :label="item.nombre"
+              :value="item.id"
+            >
+            </el-option>
+          </el-select>
+        </el-col>
+
         <el-col :span="6">
           <el-upload
             class="upload-demo"
@@ -234,6 +253,12 @@
           { id: 8, nombre: "Expulsado" },
           { id: 9, nombre: "Suspendido" },
         ],
+        tipos: [
+          { id: 1, nombre: "Militar activo" },
+          { id: "2", nombre: "Militar pasivo" },
+          { id: 3, nombre: "Policia activo" },
+          { id: 4, nombre: "Policica pasivo" },
+        ],
         pagos: [
           { id: 1, nombre: "Cancelado" },
           { id: 2, nombre: "Pendiente" },
@@ -276,6 +301,7 @@
           pdf: this.editando.pdf,
           fuerza: this.editando.fuerza,
           estado: this.editando.estado,
+          tipo: this.editando.tipo,
           mies: this.editando.mies,
           mt: this.editando.mt,
           id: this.editando.id,
