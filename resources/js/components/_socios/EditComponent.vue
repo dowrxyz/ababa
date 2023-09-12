@@ -177,6 +177,30 @@
         </el-col>
       </el-row>
 
+      <el-row :gutter="20">
+        <!-- hospitalizacion -->
+        <el-col :span="12">
+          <el-select
+            class="w-100"
+            v-model="editando.hospitalizacion"
+            placeholder="Hospitalizacion"
+            :filterable="true"
+          >
+            <el-option
+              v-for="item in hospitalizacionValores"
+              :key="item.id"
+              :label="item.nombre"
+              :value="item.id"
+            >
+              <span style="float: left">{{ item.nombre }}</span>
+              <span style="float: right; color: #8492a6; font-size: 13px">{{
+                item.siglas
+              }}</span>
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+
       <el-row :gutter="20" v-if="type_user == 1 || type_user == 3">
         <el-col :span="12">
           <el-select
@@ -270,6 +294,10 @@
         pdf: "",
         fileList: [],
         fileList2: [],
+        hospitalizacionValores: [
+          { id: 1, nombre: "Cancelado" },
+          { id: 2, nombre: "Pendiente" },
+        ],
       };
     },
     mounted() {
@@ -306,6 +334,7 @@
           mt: this.editando.mt,
           id: this.editando.id,
           pago: this.editando.pago,
+          hospitalizacion: this.editando.hospitalizacion,
         };
 
         axios.put("/api/socios", params).then((response) => {

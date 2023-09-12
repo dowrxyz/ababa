@@ -173,6 +173,30 @@
             </el-select>
           </el-col>
         </el-row>
+
+        <el-row :gutter="20">
+          <!-- hospitalizacion -->
+          <el-col :span="12">
+            <el-select
+              class="w-100"
+              v-model="hospitalizacion"
+              placeholder="Hospitalizacion"
+              :filterable="true"
+            >
+              <el-option
+                v-for="item in hospitalizacionValores"
+                :key="item.id"
+                :label="item.nombre"
+                :value="item.id"
+              >
+                <span style="float: left">{{ item.nombre }}</span>
+                <span style="float: right; color: #8492a6; font-size: 13px">{{
+                  item.siglas
+                }}</span>
+              </el-option>
+            </el-select>
+          </el-col>
+        </el-row>
       </tab-content>
 
       <tab-content title="Documento del Socio">
@@ -233,7 +257,12 @@
         mies: false,
         mt: false,
         bancos: [],
+        hospitalizacionValores: [
+          { id: 1, nombre: "Cancelado" },
+          { id: 2, nombre: "Pendiente" },
+        ],
         banco: "",
+        hospitalizacion: "",
         cuenta: "",
         tipo_documento: "",
         documento: "",
@@ -291,6 +320,7 @@
           mies: this.mies,
           mt: this.mt,
           user_id: $("#usuario_id").val(),
+          hospitalizacion: this.hospitalizacion,
         };
 
         // console.log(params);
