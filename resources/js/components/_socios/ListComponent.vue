@@ -172,7 +172,7 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO ACTUALIZCION DE DATOS- MARZO 2022.docx'
+                    '/documentos_descarga/FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023.pdf'
                   )
                 "
               >
@@ -185,11 +185,25 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIOS   PARA DESCUENTOS ISSFA SOCIOS NUEVA VISION.docx'
+                    '/documentos_descarga/FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023.pdf'
                   )
                 "
               >
                 <i class="fa fa-file-pdf"></i> Descuento Del ISSFA</el-button
+              >
+            </el-col>
+
+            <el-col :span="4" style="margin-top: 10px">
+              <el-button
+                style="width: 100%"
+                type="primary"
+                @click="
+                  dsecargarDocumento(
+                    '/documentos_descarga/FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023.pdf'
+                  )
+                "
+              >
+                Afiliación</el-button
               >
             </el-col>
           </el-row>
