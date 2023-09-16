@@ -13,10 +13,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Barryvdh\DomPDF\Facade as PDF;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\SociosExport;
-use App\Mail\WelcomeCallReceived;
 use Illuminate\Support\Facades\Hash;
-use Mail;
 use Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\Mail;
 
 use function GuzzleHttp\json_encode;
 
@@ -91,9 +90,10 @@ class SocioController extends Controller
           "status_user" => $request->estado,
           "socio_id" => $socio->id,
         ]);
-        //enviar correo
-        //$mailable = new WelcomeCallReceived('kewing', 'martes');
-        //Mail::to("kewingjarquin@gmail.com")->send($mailable);
+        Mail::send("mails.newUser", [], function ($message) use ($request) {
+          $message->to($request->correo);
+          $message->subject("Bienvenid@ a asociacionmilitaresnuevavision");
+        });
         return $socio;
       }
     } else {
@@ -537,6 +537,11 @@ class SocioController extends Controller
     $socio->save();
 
     $this->storePdf($socio, $nombre);
+
+    Mail::send("mails.userUpdate", [], function ($message) use ($request) {
+      $message->to($request->correo);
+      $message->subject("Notificacion");
+    });
 
     return $socio;
   }
