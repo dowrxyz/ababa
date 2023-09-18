@@ -75,6 +75,8 @@ class SocioController extends Controller
       $socio->ficha_pdf = $nombre;
       $socio->pago = 2;
       $socio->hospitalizacion = $request->hospitalizacion;
+      $socio->abono = $request->abono;
+      $socio->abonos = $request->abonos;
 
       if (empty($request->perfil)) {
         return "Campo foto del socio esta vacio";
@@ -534,6 +536,8 @@ class SocioController extends Controller
     $socio->ficha_pdf = $nombre;
     $socio->pago = $pago;
     $socio->hospitalizacion = $request->hospitalizacion;
+    $socio->abono = $request->abono;
+    $socio->abonos = $request->abonos;
     $socio->save();
 
     $this->storePdf($socio, $nombre);

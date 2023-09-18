@@ -220,6 +220,40 @@
         </el-col>
         <el-col :span="12"> </el-col>
       </el-row>
+
+      <el-row :gutter="20">
+        <!-- abonos seleccion -->
+        <el-col :span="12">
+          <el-select
+            v-model="editando.abono"
+            class="w-100"
+            placeholder="Abono"
+            :filterable="true"
+          >
+            <el-option
+              v-for="item in abonoValores"
+              :key="item.id"
+              :label="item.nombre"
+              :value="item.id"
+            >
+              <span style="float: left">{{ item.nombre }}</span>
+              <span style="float: right; color: #8492a6; font-size: 13px">{{
+                item.siglas
+              }}</span>
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="20">
+        <!-- abonos valores -->
+        <el-col :span="12">
+          <el-col v-for="(item, index) in abonosValores" :key="index" :span="6">
+            <span class="demo-input-label">{{ item.nombre }}</span>
+            <el-input v-model="item.valor" :placeholder="item.id"> </el-input>
+          </el-col>
+        </el-col>
+      </el-row>
     </el-tab-pane>
 
     <el-tab-pane label="Documento del Socio">
@@ -298,6 +332,25 @@
           { id: 1, nombre: "Cancelado" },
           { id: 2, nombre: "Pendiente" },
         ],
+        abonoValores: [
+          { id: 1, nombre: "Abono" },
+          { id: 2, nombre: "Cancelado" },
+          { id: 3, nombre: "Pendiente" },
+        ],
+        abonosValores: [
+          { id: "enero", valor: 0, nombre: "Enero" },
+          { id: "febrero", valor: 0, nombre: "Febrero" },
+          { id: "marzo", valor: 0, nombre: "Marzo" },
+          { id: "abril", valor: 0, nombre: "Abril" },
+          { id: "mayo", valor: 0, nombre: "Mayo" },
+          { id: "junio", valor: 0, nombre: "Junio" },
+          { id: "julio", valor: 0, nombre: "Julio" },
+          { id: "agosto", valor: 0, nombre: "Agosto" },
+          { id: "septiembre", valor: 0, nombre: "Septiembre" },
+          { id: "octubre", valor: 0, nombre: "Octubre" },
+          { id: "noviembre", valor: 0, nombre: "Noviembre" },
+          { id: "diciembre", valor: 0, nombre: "Diciembre" },
+        ],
       };
     },
     mounted() {
@@ -307,6 +360,11 @@
       axios.get("/api/bancos").then((response) => {
         this.bancos = response.data;
         console.log(this.bancos);
+      });
+      let countIndex = 0;
+      JSON.parse(this.editando.abonos).forEach((element) => {
+        this.abonosValores[countIndex].valor = element;
+        countIndex++;
       });
     },
 
@@ -335,6 +393,21 @@
           id: this.editando.id,
           pago: this.editando.pago,
           hospitalizacion: this.editando.hospitalizacion,
+          abono: this.editando.abono,
+          abonos: JSON.stringify([
+            this.abonosValores[0].valor,
+            this.abonosValores[1].valor,
+            this.abonosValores[2].valor,
+            this.abonosValores[3].valor,
+            this.abonosValores[4].valor,
+            this.abonosValores[5].valor,
+            this.abonosValores[6].valor,
+            this.abonosValores[7].valor,
+            this.abonosValores[8].valor,
+            this.abonosValores[9].valor,
+            this.abonosValores[10].valor,
+            this.abonosValores[11].valor,
+          ]),
         };
 
         axios.put("/api/socios", params).then((response) => {
