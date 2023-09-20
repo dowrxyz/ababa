@@ -310,6 +310,7 @@
           { id: 7, nombre: "Cuenta no corresponde" },
           { id: 8, nombre: "Expulsado" },
           { id: 9, nombre: "Suspendido" },
+          { id: 10, nombre: "No existe cuenta" },
         ],
         tipos: [
           { id: 1, nombre: "Militar activo" },

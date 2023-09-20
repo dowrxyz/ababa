@@ -212,6 +212,14 @@ class SocioController extends Controller
         ->paginate(25);
     }
 
+    //No existe cuenta
+    if (Auth::user()->tipo_socio == 14) {
+      $socio = Socio::with("banco", "creador")
+        ->where("estado", 10)
+        ->orderBy("id", "DESC")
+        ->paginate(25);
+    }
+
     return [
       "pagination" => [
         "total" => $socio->total(),

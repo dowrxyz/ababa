@@ -386,6 +386,11 @@
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Suspendido</span>
                                 </a>
+                                <a class="d-flex align-items-center"
+                                    href="{{ route("socios_tipo", 14) }}">
+                                    <i data-feather="circle"></i><span
+                                        class="menu-item text-truncate">No existe cuenta</span>
+                                </a>
                             </li>
                         </ul>
                     </li>
