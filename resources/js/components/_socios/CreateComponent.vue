@@ -230,10 +230,22 @@
             <el-col
               v-for="(item, index) in abonosValores"
               :key="index"
-              :span="6"
+              :span="8"
             >
               <span class="demo-input-label">{{ item.nombre }}</span>
-              <el-input v-model="item.valor" :placeholder="item.id"> </el-input>
+              <el-row :gutter="20">
+                <el-col
+                  :span="2"
+                  style="position: relative; transform: translateY(50%)"
+                >
+                  <span class="demo-input-label">$</span>
+                </el-col>
+
+                <el-col :span="10">
+                  <el-input v-model="item.valor" :placeholder="item.id">
+                  </el-input>
+                </el-col>
+              </el-row>
             </el-col>
           </el-col>
         </el-row>
