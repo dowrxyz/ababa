@@ -172,7 +172,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023.pdf'
+                    '/documentos_descarga/FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023.pdf',
+                    'FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023'
                   )
                 "
               >
@@ -185,7 +186,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023.pdf'
+                    '/documentos_descarga/FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023.pdf',
+                    'FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023'
                   )
                 "
               >
@@ -199,7 +201,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023.pdf'
+                    '/documentos_descarga/FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023.pdf',
+                    'FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023'
                   )
                 "
               >
@@ -470,7 +473,7 @@
           fileLink.click();
         });
       },
-      dsecargarDocumento(data) {
+      dsecargarDocumento(data, name) {
         axios({
           url: data,
           method: "GET",
@@ -480,7 +483,7 @@
           var fileLink = document.createElement("a");
 
           fileLink.href = fileURL;
-          fileLink.setAttribute("download", "documento.docx");
+          fileLink.setAttribute("download", `${name}.pdf`);
           document.body.appendChild(fileLink);
 
           fileLink.click();
