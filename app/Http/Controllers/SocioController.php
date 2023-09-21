@@ -41,8 +41,13 @@ class SocioController extends Controller
   public function store(Request $request)
   {
     //verificar que el socio no se duplique
-    $consultaSocio = Socio::where("documento", $request->documento)->get();
-    if (count($consultaSocio) == 0) {
+    $documentoExiste = Socio::where("documento", $request->documento)->get();
+    $nombresExisten = Socio::where(
+      "nombres",
+      "like",
+      strtolower($request->nombres)
+    )->get();
+    if (count($documentoExiste) == 0 && count($nombresExisten) == 0) {
       $banco = Banco::find($request->banco);
       $socio = new Socio();
       $socio->tipo_documento = $request->tipo_documento;
