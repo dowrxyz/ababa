@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido {{$nombre}}</h1>
 
     <p>
         Excelente día te desea el equipo de <a

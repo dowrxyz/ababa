@@ -11,6 +11,7 @@
 
 <body>
     <h1>Datos actualizados</h1>
+    <h2>Notificacion para {{$nombre}}</h2>
 
     <p>
     Tus datos fueron actualizados correctamente.

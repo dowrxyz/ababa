@@ -92,7 +92,9 @@ class SocioController extends Controller
           "status_user" => $request->estado,
           "socio_id" => $socio->id,
         ]);
-        Mail::send("mails.newUser", [], function ($message) use ($request) {
+        Mail::send("mails.newUser", ["nombre" => $request->nombres], function (
+          $message
+        ) use ($request) {
           $message->to($request->correo);
           $message->subject("Bienvenid@ a asociacionmilitaresnuevavision");
         });
@@ -550,7 +552,9 @@ class SocioController extends Controller
 
     $this->storePdf($socio, $nombre);
 
-    Mail::send("mails.userUpdate", [], function ($message) use ($request) {
+    Mail::send("mails.userUpdate", ["nombre" => $request->nombres], function (
+      $message
+    ) use ($request) {
       $message->to($request->correo);
       $message->subject("Notificacion");
     });

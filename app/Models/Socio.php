@@ -62,7 +62,7 @@ class Socio extends Authenticatable
       ];
     }
     if ($value == 8) {
-      $valor = ["id" => $value, "value" => "Expuldao", "color" => "danger"];
+      $valor = ["id" => $value, "value" => "Expulsado", "color" => "danger"];
     }
     if ($value == 9) {
       $valor = ["id" => $value, "value" => "Suspendido", "color" => "danger"];

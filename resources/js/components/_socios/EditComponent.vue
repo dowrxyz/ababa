@@ -180,6 +180,7 @@
       <el-row :gutter="20">
         <!-- hospitalizacion -->
         <el-col :span="12">
+          <span class="demo-input-label">Hospitalización</span>
           <el-select
             class="w-100"
             v-model="editando.hospitalizacion"
@@ -224,6 +225,7 @@
       <el-row :gutter="20">
         <!-- abonos seleccion -->
         <el-col :span="12">
+          <span class="demo-input-label">Abono</span>
           <el-select
             v-model="editando.abono"
             class="w-100"
@@ -301,6 +303,7 @@
           { id: 4, nombre: "CIVIL" },
         ],
         estados: [
+          { id: 10, nombre: "No existe cuenta" },
           { id: 1, nombre: "Activo" },
           { id: 2, nombre: "Inactivo" },
           { id: 3, nombre: "Bloqueado" },
@@ -310,7 +313,6 @@
           { id: 7, nombre: "Cuenta no corresponde" },
           { id: 8, nombre: "Expulsado" },
           { id: 9, nombre: "Suspendido" },
-          { id: 10, nombre: "No existe cuenta" },
         ],
         tipos: [
           { id: 1, nombre: "Militar activo" },

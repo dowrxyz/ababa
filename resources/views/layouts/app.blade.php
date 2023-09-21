@@ -362,6 +362,11 @@
                                         class="menu-item text-truncate">Aportes</span>
                                 </a>
                                 <a class="d-flex align-items-center"
+                                    href="{{ route("socios_tipo", 14) }}">
+                                    <i data-feather="circle"></i><span
+                                        class="menu-item text-truncate">No existe cuenta</span>
+                                </a>
+                                <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 9) }}">
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Cuenta cancelada</span>
@@ -385,11 +390,6 @@
                                     href="{{ route("socios_tipo", 13) }}">
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Suspendido</span>
-                                </a>
-                                <a class="d-flex align-items-center"
-                                    href="{{ route("socios_tipo", 14) }}">
-                                    <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">No existe cuenta</span>
                                 </a>
                             </li>
                         </ul>
