@@ -10,12 +10,20 @@
 </head>
 
 <body>
-    <h1>Datos actualizados</h1>
-    <h2>Notificacion para {{$nombre}}</h2>
+    <h1 style="display: flex;justify-content: center;"><b><u>Agradecimiento a los
+                Socios por la actualización de datos</u></b>
+    </h1>
 
     <p>
-    Tus datos fueron actualizados correctamente.
+        Gracias señor {{ $nombre }}, a nombre de la Asociación de
+        Militares
+        Nueva Visión F.A., le agradecemos por ser parte de esta gran
+        institución, estamos a su disposición cuando necesites de nuestra
+        asesoría y asistencia jurídica. <b><u>Le agradecemos por haber
+                actualizados
+                sus datos</u></b>.
     </p>
+
 </body>
 
 </html>

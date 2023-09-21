@@ -10,12 +10,19 @@
 </head>
 
 <body>
-    <h1>Bienvenido {{$nombre}}</h1>
+    <h1 style="display: flex;justify-content: center;"><b><u>Bienvenida Socios
+                nuevos</u></b>
+    </h1>
 
     <p>
-        Excelente día te desea el equipo de <a
-            href="https://asociacionmilitaresnuevavision.com/">asociacionmilitaresnuevavision</a>
+        Bienvenido señor {{ $nombre }}, a nombre de la Asociación de
+        Militares Nueva Visión F.A., le agradecemos por ser parte de esta gran
+        institución, estamos a su disposición cuando necesites de nuestra
+        asesoría y asistencia jurídica, <b><u>nos enorgullece que puedas formar
+                parte
+                de nuestra Asociación</u></b>.
     </p>
+
 </body>
 
 </html>
