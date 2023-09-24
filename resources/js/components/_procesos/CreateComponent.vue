@@ -120,12 +120,20 @@
 
         axios.post("/api/procesos", params).then((response) => {
           console.log(response.data);
-          this.$notify.success({
-            title: "Procesado!",
-            message: "Registro Creado Correctamente",
-            offset: 100,
-          });
-          this.$emit("new");
+          if (response.data == "pendiente") {
+            this.$notify.error({
+              title: "Error!",
+              message: "Pendiente de pago",
+              offset: 100,
+            });
+          } else {
+            this.$notify.success({
+              title: "Procesado!",
+              message: "Registro Creado Correctamente",
+              offset: 100,
+            });
+            this.$emit("new");
+          }
         });
       },
     },
