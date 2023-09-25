@@ -271,7 +271,10 @@ Vue.component(
   require("./components/_historico/ListComponent.vue").default
 );
 // Vue.component( 'historico-create-component', require( './components/_historico/CreateComponent.vue' ).default);
-// Vue.component( 'historico-edit-component', require( './components/_historico/EditComponent.vue' ).default);
+Vue.component(
+  "historico-edit-component",
+  require("./components/_historico/EditComponent.vue").default
+);
 Vue.component(
   "historico-show-component",
   require("./components/_historico/ShowComponent.vue").default

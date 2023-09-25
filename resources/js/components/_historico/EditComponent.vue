@@ -171,6 +171,7 @@
               :key="item.id"
               :label="item.nombre"
               :value="item.id"
+              :disabled="type_user == 1 || type_user == 3 ? false : true"
             >
             </el-option>
           </el-select>

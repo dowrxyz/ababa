@@ -17,13 +17,13 @@
       <!--     v-if="create" -->
       <!--     @new="store" -->
       <!-- ></historico-create-component> -->
-      <!-- <historico-edit-component -->
-      <!--     v-if="edit" -->
-      <!--     :editando="editando" -->
-      <!--     @regresar="store" -->
-      <!--     @new="store" -->
-      <!-- > -->
-      <!-- </historico-edit-component> -->
+      <historico-edit-component
+        v-if="edit"
+        :editando="editando"
+        @regresar="store"
+        @new="store"
+      >
+      </historico-edit-component>
       <historico-show-component v-if="show"> </historico-show-component>
       <aportes-socios-create-component
         v-if="create_aporte"
@@ -69,7 +69,6 @@
         list_aporte: false,
         aportes: [],
         dependiente: true,
-        editando: "",
         edit_aporte: false,
         pagination: {
           total: 0,
