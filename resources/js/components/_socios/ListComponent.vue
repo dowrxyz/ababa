@@ -438,7 +438,7 @@
         var socio_id = id;
         this.$emit("createAporte", socio_id, banco_id);
       },
-      descargar() {
+      async descargar() {
         const params = {
           documento: this.documento,
           nombre: this.nombre.toUpperCase(),
@@ -451,20 +451,20 @@
         console.log(params);
 
         //axios.post('/socios/buscar?page='+page, params).then((response) =>
-        axios.post("/export_socios", params).then((response) => {
+        await axios.post("/export_socios", params).then((response) => {
           this.descargando = response.data;
           console.log(response.data);
         });
 
-        var url = "/documentos_imagenes/socios_Excels/" + this.descargando;
+        const url = "/documentos_imagenes/socios_Excels/" + this.descargando;
 
-        axios({
+        await axios({
           url: url,
           method: "GET",
           responseType: "blob",
         }).then((response) => {
-          var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-          var fileLink = document.createElement("a");
+          const fileURL = window.URL.createObjectURL(new Blob([response.data]));
+          const fileLink = document.createElement("a");
 
           fileLink.href = fileURL;
           fileLink.setAttribute("download", this.descargando);
