@@ -22,7 +22,7 @@ class ProcesoSocioController extends Controller
   public function store(Request $request)
   {
     $socio = Socio::find($request->socio);
-    if ($socio->pago == 2) {
+    if ($socio->pago["value"] == "Cancelado") {
       $proceso = new ProcesoSocio();
       $proceso->socio_id = $request->socio;
       $proceso->lugar = $request->lugar;
@@ -30,10 +30,15 @@ class ProcesoSocioController extends Controller
       $proceso->valor = $request->valor;
       $proceso->creador_id = $request->user_id;
       $proceso->save();
-
       return $proceso;
     } else {
-      return "pendiente";
+      return response()->json(
+        [
+          "message" => "pendiente",
+          "code" => 400,
+        ],
+        400
+      );
     }
   }
 

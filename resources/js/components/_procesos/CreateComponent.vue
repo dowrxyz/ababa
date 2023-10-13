@@ -11,8 +11,8 @@
         <el-col :span="12" style="margin-bottom: 20px">
           <el-label>Socio</el-label>
           <el-select
-            class="w-100"
             v-model="socio"
+            class="w-100"
             placeholder="Socio"
             :filterable="true"
           >
@@ -28,8 +28,8 @@
         <el-col :span="8">
           <el-label>Socio</el-label>
           <el-select
-            class="w-100"
             v-model="lugar"
+            class="w-100"
             placeholder="Lugar"
             :filterable="true"
           >
@@ -44,11 +44,11 @@
         </el-col>
         <el-col :span="4">
           <el-label>Valor</el-label>
-          <el-input placeholder="Valor" v-model="valor"></el-input>
+          <el-input v-model="valor" placeholder="Valor"></el-input>
         </el-col>
         <el-col :span="24" style="margin-bottom: 20px">
           <el-label>Detalle</el-label>
-          <el-input placeholder="Detalle" v-model="detalle"></el-input>
+          <el-input v-model="detalle" placeholder="Detalle"></el-input>
         </el-col>
         <el-col :span="20"> . </el-col>
         <el-col :span="4">
@@ -118,23 +118,27 @@
           detalle: this.detalle,
         };
 
-        axios.post("/api/procesos", params).then((response) => {
-          console.log(response.data);
-          if (response.data == "pendiente") {
-            this.$notify.error({
-              title: "Error!",
-              message: "Pendiente de pago",
-              offset: 100,
-            });
-          } else {
+        axios
+          .post("/api/procesos", params)
+          .then((response) => {
+            console.log(response.data);
             this.$notify.success({
               title: "Procesado!",
               message: "Registro Creado Correctamente",
               offset: 100,
             });
             this.$emit("new");
-          }
-        });
+          })
+          .catch((e) => {
+            const errorMesagge = e.response.data.message;
+            if (errorMesagge == "pendiente") {
+              this.$notify.error({
+                title: "Error!",
+                message: "Pendiente de pago",
+                offset: 100,
+              });
+            }
+          });
       },
     },
   };
