@@ -172,8 +172,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023.pdf',
-                    'FORMULARIO ACTUALIZACION DE DATOS - 14 AGOSTO 2023'
+                    '/documentos_descarga/2.-_FORMULARIO_ACTUALIZACION_DE_DATOS_-__10__OCT._2023.pdf',
+                    'FORMULARIO_ACTUALIZACION_DE_DATOS_-__10__OCT._2023'
                   )
                 "
               >
@@ -186,8 +186,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023.pdf',
-                    'FORMULARIO SOLICITUD DESCUENTO ISSFA, AGO. 2023'
+                    '/documentos_descarga/3.-_FORMULARIO_SOLICITUD_DESCUENTO_ISSFA,_10_OCT.__2023.pdf',
+                    'FORMULARIO_SOLICITUD_DESCUENTO_ISSFA,_10_OCT.__2023'
                   )
                 "
               >
@@ -201,8 +201,8 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023.pdf',
-                    'FORMULARIO SOCIO NUEVO. 14 AGOSTO 2023'
+                    '/documentos_descarga/1.-_FORMULARIO_SOCIO_NUEVOS_10_OCT.__2023.pdf',
+                    'FORMULARIO_SOCIO_NUEVOS_10_OCT.__2023.pdf'
                   )
                 "
               >
