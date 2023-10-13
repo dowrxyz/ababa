@@ -199,7 +199,8 @@
                 </li>
                 @if (Auth::user()->type_user == 1 or
                         Auth::user()->type_user == 3 or
-                        Auth::user()->type_user == 2)
+                        Auth::user()->type_user == 2
+                )
                     <li class=" nav-item"><a class="d-flex align-items-center"
                             href="#"><i data-feather="user"></i><span
                                 class="menu-title text-truncate"
@@ -295,7 +296,8 @@
                 @if (Auth::user()->type_user == 1 or
                         Auth::user()->type_user == 2 or
                         Auth::user()->type_user == 3 or
-                        Auth::user()->type_user == 4)
+                        Auth::user()->type_user == 4
+                )
                     <li class=" nav-item"><a class="d-flex align-items-center"
                             href="#"><i data-feather="users"></i><span
                                 class="menu-title text-truncate"
@@ -356,30 +358,36 @@
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Procesos</span>
                                 </a>
-                                <a class="d-flex align-items-center"
-                                    href="{{ route("socios_tipo", 3) }}">
-                                    <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">Aportes</span>
-                                </a>
+                                @if (Auth::user()->type_user == 1 || Auth::user()->type_user == 3)
+                                    <a class="d-flex align-items-center"
+                                        href="{{ route("aportes") }}">
+                                        <i data-feather="circle"></i><span
+                                            class="menu-item text-truncate">Aportes</span>
+                                    </a>
+                                @endif
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 14) }}">
                                     <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">No existe cuenta</span>
+                                        class="menu-item text-truncate">No
+                                        existe cuenta</span>
                                 </a>
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 9) }}">
                                     <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">Cuenta cancelada</span>
+                                        class="menu-item text-truncate">Cuenta
+                                        cancelada</span>
                                 </a>
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 10) }}">
                                     <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">Cuenta inactiva</span>
+                                        class="menu-item text-truncate">Cuenta
+                                        inactiva</span>
                                 </a>
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 11) }}">
                                     <i data-feather="circle"></i><span
-                                        class="menu-item text-truncate">Cuenta no corresponde</span>
+                                        class="menu-item text-truncate">Cuenta
+                                        no corresponde</span>
                                 </a>
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 12) }}">
