@@ -76,8 +76,6 @@ class SocioController extends Controller
         $socio->convenio = 0;
         $socio->banco_id = 17;
       }
-      $nombre = "socio_" . date("YmdHis") . "_ficha.pdf";
-      $socio->ficha_pdf = $nombre;
       $socio->pago = 2;
       $socio->hospitalizacion = $request->hospitalizacion;
       $socio->abono = $request->abono;
@@ -87,7 +85,6 @@ class SocioController extends Controller
         return "Campo foto del socio esta vacio";
       } else {
         $socio->save();
-        $this->storePdf($socio, $nombre);
         User::create([
           "email" => $request->correo,
           "name" => $request->nombres,
@@ -108,6 +105,14 @@ class SocioController extends Controller
     } else {
       return "existe";
     }
+  }
+
+  function generatePartnerFile()
+  {
+    $socio = Socio::where("id", "7171")->get();
+    $nombre = "documento_" . $socio[0]->nombres . "_ficha.pdf";
+    $this->storePdf($socio[0], $nombre);
+    return "/fichas_socios/" . $nombre;
   }
 
   public function show(Request $request)

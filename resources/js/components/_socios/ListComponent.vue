@@ -142,7 +142,7 @@
               <el-button
                 style="width: 100%"
                 type="primary"
-                @click="dsecargarArchivo(props.row.ficha_pdf.url)"
+                @click="generatePartnerFile()"
               >
                 <i class="fa fa-user"></i> Ficha Del Usuario</el-button
               >
@@ -488,6 +488,21 @@
 
           fileLink.click();
         });
+      },
+
+      generatePartnerFile() {
+        axios({
+          url: "http://127.0.0.1:8000/api/generatePartnerFile",
+          method: "post",
+        })
+          .then(async (response) => {
+            this.dsecargarArchivo(response.data);
+          })
+          .catch((e) => {
+            console.error(e);
+            if (e.message == "Request failed with status code 404")
+              alert("Documento no encontrado");
+          });
       },
     },
   };

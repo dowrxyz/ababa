@@ -61,6 +61,10 @@ Route::post("update-password-socio", [
 Route::post("update-socio", [SocioController::class, "updateSocio"]);
 Route::post("logout-socio-app", [SocioController::class, "logoutSocioApp"]);
 Route::post("update-socio-photo", [SocioController::class, "updateSocioPhoto"]);
+Route::post("generatePartnerFile", [
+  SocioController::class,
+  "generatePartnerFile",
+]);
 
 //Rutas AportesSocios
 Route::get("aportes-socios/{socio}/{type_user}/{user_id}", [
