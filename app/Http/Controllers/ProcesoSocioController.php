@@ -22,7 +22,7 @@ class ProcesoSocioController extends Controller
   public function store(Request $request)
   {
     $socio = Socio::find($request->socio);
-    if ($socio->pago["value"] == "Pendiente") {
+    if ($socio->pago["value"] == "Cancelado") {
       $proceso = new ProcesoSocio();
       $proceso->socio_id = $request->socio;
       $proceso->lugar = $request->lugar;
