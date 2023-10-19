@@ -48,10 +48,20 @@ class AporteController extends Controller
 
   public function update(Request $request)
   {
-    $aporte = Aporte::find($request->id);
-    $aporte->ano = $request->ano;
-    $aporte->tipo_aporte = $request->tipo_aporte;
-    $aporte->aporte = $request->aporte;
-    $aporte->save();
+    if ($request->usuario_id == 1 || $request->usuario_id == 3) {
+      $aporte = Aporte::find($request->id);
+      $aporte->ano = $request->ano;
+      $aporte->tipo_aporte = $request->tipo_aporte;
+      $aporte->aporte = $request->aporte;
+      $aporte->save();
+    } else {
+      return response()->json(
+        [
+          "message" => "insufficient permissions",
+          "code" => 400,
+        ],
+        400
+      );
+    }
   }
 }

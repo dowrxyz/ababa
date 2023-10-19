@@ -103,15 +103,27 @@
           id: this.editando.id,
         };
 
-        axios.put("/api/aportes", params).then((response) => {
-          console.log(response.data);
-          this.$emit("new");
-          $("#editAporte").modal("hide");
+        axios
+          .put("/api/aportes", params)
+          .then((response) => {
+            console.log(response.data);
+            this.$emit("new");
+            $("#editAporte").modal("hide");
 
-          this.editando.aporte = "";
-          this.editando.ano = 0;
-          this.editando.tipo_aporte = 0;
-        });
+            this.editando.aporte = "";
+            this.editando.ano = 0;
+            this.editando.tipo_aporte = 0;
+          })
+          .catch((e) => {
+            const errorMesagge = e.response.data.message;
+            if (errorMesagge == "insufficient permissions") {
+              this.$notify.error({
+                title: "Error!",
+                message: "Permisos insuficientes",
+                offset: 100,
+              });
+            }
+          });
       },
     },
   };
