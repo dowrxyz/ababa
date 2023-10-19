@@ -21,14 +21,24 @@ class AporteController extends Controller
 
   public function store(Request $request)
   {
-    $aporte = new Aporte();
-    $aporte->id_usuario = $request->usuario_id;
-    $aporte->ano = $request->ano;
-    $aporte->tipo_aporte = $request->tipo_aporte;
-    $aporte->aporte = $request->aporte;
-    $aporte->save();
+    if ($request->usuario_id == 1 || $request->usuario_id == 3) {
+      $aporte = new Aporte();
+      $aporte->id_usuario = $request->usuario_id;
+      $aporte->ano = $request->ano;
+      $aporte->tipo_aporte = $request->tipo_aporte;
+      $aporte->aporte = $request->aporte;
+      $aporte->save();
 
-    return $aporte;
+      return $aporte;
+    } else {
+      return response()->json(
+        [
+          "message" => "insufficient permissions",
+          "code" => 400,
+        ],
+        400
+      );
+    }
   }
 
   public function show()
