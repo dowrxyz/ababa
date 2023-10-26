@@ -358,11 +358,13 @@
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Procesos</span>
                                 </a>
+                                @if (Auth::user()->type_user == 1 || Auth::user()->type_user == 3)
                                     <a class="d-flex align-items-center"
                                         href="{{ route("aportes") }}">
                                         <i data-feather="circle"></i><span
                                             class="menu-item text-truncate">Aportes</span>
                                     </a>
+                                @endif
                                 <a class="d-flex align-items-center"
                                     href="{{ route("socios_tipo", 14) }}">
                                     <i data-feather="circle"></i><span

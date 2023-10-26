@@ -120,13 +120,7 @@
           })
           .catch((e) => {
             const errorMesagge = e.response.data.message;
-            if (errorMesagge == "insufficient permissions") {
-              this.$notify.error({
-                title: "Error!",
-                message: "Permisos insuficientes",
-                offset: 100,
-              });
-            }
+            console.error(errorMesagge);
           });
       },
     },

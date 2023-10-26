@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreAporteRequest;
-use App\Http\Requests\UpdateAporteRequest;
 use App\Models\Aporte;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Request;
@@ -21,24 +19,14 @@ class AporteController extends Controller
 
   public function store(Request $request)
   {
-    if ($request->usuario_id == 1 || $request->usuario_id == 3) {
-      $aporte = new Aporte();
-      $aporte->id_usuario = $request->usuario_id;
-      $aporte->ano = $request->ano;
-      $aporte->tipo_aporte = $request->tipo_aporte;
-      $aporte->aporte = $request->aporte;
-      $aporte->save();
+    $aporte = new Aporte();
+    $aporte->id_usuario = $request->usuario_id;
+    $aporte->ano = $request->ano;
+    $aporte->tipo_aporte = $request->tipo_aporte;
+    $aporte->aporte = $request->aporte;
+    $aporte->save();
 
-      return $aporte;
-    } else {
-      return response()->json(
-        [
-          "message" => "insufficient permissions",
-          "code" => 400,
-        ],
-        400
-      );
-    }
+    return $aporte;
   }
 
   public function show()
