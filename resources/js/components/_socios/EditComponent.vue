@@ -150,7 +150,10 @@
       </el-row>
     </el-tab-pane>
 
-    <el-tab-pane label="Informacion Financiera">
+    <el-tab-pane
+      v-if="type_user == 1 || type_user == 3"
+      label="Informacion Financiera"
+    >
       <el-row :gutter="20">
         <el-col :span="12">
           <el-input v-model="editando.cuenta" placeholder="Cuenta"> </el-input>
