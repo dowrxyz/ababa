@@ -172,7 +172,7 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/2.-_FORMULARIO_ACTUALIZACION_DE_DATOS_-__10__OCT._2023.pdf',
+                    '/documentos_descarga/2.-_FORMULARIO_ACTUALIZACION_DE_DATOS_-__10__OCT._2023.docx',
                     'FORMULARIO_ACTUALIZACION_DE_DATOS_-__10__OCT._2023'
                   )
                 "
@@ -186,7 +186,7 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/3.-_FORMULARIO_SOLICITUD_DESCUENTO_ISSFA,_10_OCT.__2023.pdf',
+                    '/documentos_descarga/3.-_FORMULARIO_SOLICITUD_DESCUENTO_ISSFA,_10_OCT.__2023.docx',
                     'FORMULARIO_SOLICITUD_DESCUENTO_ISSFA,_10_OCT.__2023'
                   )
                 "
@@ -201,7 +201,7 @@
                 type="primary"
                 @click="
                   dsecargarDocumento(
-                    '/documentos_descarga/1.-_FORMULARIO_SOCIO_NUEVOS_10_OCT.__2023.pdf',
+                    '/documentos_descarga/1.-_FORMULARIO_SOCIO_NUEVOS_10_OCT.__2023.docx',
                     'FORMULARIO_SOCIO_NUEVOS_10_OCT.__2023.pdf'
                   )
                 "
@@ -483,7 +483,7 @@
           var fileLink = document.createElement("a");
 
           fileLink.href = fileURL;
-          fileLink.setAttribute("download", `${name}.pdf`);
+          fileLink.setAttribute("download", `${name}.docx`);
           document.body.appendChild(fileLink);
 
           fileLink.click();
