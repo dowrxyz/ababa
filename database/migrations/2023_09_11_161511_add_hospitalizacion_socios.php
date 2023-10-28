@@ -14,7 +14,7 @@ class AddHospitalizacionSocios extends Migration
   public function up()
   {
     Schema::table("socios", function (Blueprint $table) {
-      $table->integer("hospitalizacion");
+      $table->integer("hospitalizacion")->default(2);
     });
   }
 

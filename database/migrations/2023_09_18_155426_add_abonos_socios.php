@@ -14,7 +14,7 @@ class AddAbonosSocios extends Migration
   public function up()
   {
     Schema::table("socios", function (Blueprint $table) {
-      $table->string("abono");
+      $table->string("abono")->default("2");
       $table->string("abonos");
     });
   }
