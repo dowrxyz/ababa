@@ -157,7 +157,7 @@
                 Documento</el-button
               >
             </el-col>
-            <el-col :span="4">
+            <el-col :span="4" v-if="type_user != 1 && type_user != 3">
               <el-button
                 style="width: 100%"
                 type="primary"
@@ -337,6 +337,7 @@
         usuario: "",
         pago: "",
         offset: 5,
+        type_user: $("#type_user").val(),
       };
     },
 
