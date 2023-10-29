@@ -107,9 +107,10 @@ class SocioController extends Controller
     }
   }
 
-  function generatePartnerFile()
+  function generatePartnerFile(Request $request)
   {
-    $socio = Socio::where("id", "7171")->get();
+    $socio_id = $request->id;
+    $socio = Socio::where("id", $socio_id)->get();
     $nombre = "documento_" . $socio[0]->nombres . "_ficha.pdf";
     $this->storePdf($socio[0], $nombre);
     return "/fichas_socios/" . $nombre;

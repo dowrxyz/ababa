@@ -142,7 +142,7 @@
               <el-button
                 style="width: 100%"
                 type="primary"
-                @click="generatePartnerFile()"
+                @click="generatePartnerFile(props.row.id)"
               >
                 <i class="fa fa-user"></i> Ficha Del Usuario</el-button
               >
@@ -491,10 +491,11 @@
         });
       },
 
-      generatePartnerFile() {
+      generatePartnerFile(id) {
         axios({
           url: "http://127.0.0.1:8000/api/generatePartnerFile",
           method: "post",
+          data: { id: JSON.stringify(id) },
         })
           .then(async (response) => {
             this.dsecargarArchivo(response.data);
