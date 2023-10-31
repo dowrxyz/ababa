@@ -135,6 +135,42 @@
           </el-upload>
         </el-col>
       </el-row>
+
+      <el-row :gutter="20">
+        <el-col :span="6">
+          <el-select
+            class="w-100"
+            v-model="editando.provincia"
+            placeholder="Provincias"
+            :filterable="true"
+            @change="editando.canton = ''"
+          >
+            <el-option
+              v-for="item in Object.keys(provincias)"
+              :key="item"
+              :label="item"
+              :value="item"
+            >
+            </el-option>
+          </el-select>
+        </el-col>
+        <el-col :span="6">
+          <el-select
+            class="w-100"
+            v-model="editando.canton"
+            placeholder="Canton"
+            :filterable="true"
+          >
+            <el-option
+              v-for="item in provincias[editando.provincia]"
+              :key="item"
+              :label="item"
+              :value="item"
+            >
+            </el-option>
+          </el-select>
+        </el-col>
+      </el-row>
     </el-tab-pane>
 
     <el-tab-pane label="Datos del Contacto de Emergencia">
@@ -357,6 +393,262 @@
           { id: "noviembre", valor: 0, nombre: "Noviembre" },
           { id: "diciembre", valor: 0, nombre: "Diciembre" },
         ],
+        provincias: {
+          Azuay: [
+            "Cuenca",
+            "Girón",
+            "Gualaceo",
+            "Nabón",
+            "Paute",
+            "Pucara",
+            "San Fernando",
+            "Santa Isabel",
+            "Sigsig",
+            "Oña",
+            "Chordeleg",
+            "El Pan",
+            "Sevilla de Oro",
+            "Guachapala",
+            "Camilo Ponce Enríquez",
+          ],
+          Bolívar: [
+            "Guaranda",
+            "Chillanes",
+            "Chimbo",
+            "Echeandía",
+            "San Miguel",
+            "Caluma",
+            "Las Naves",
+          ],
+          Cañar: [
+            "Azogues",
+            "Biblián",
+            "Cañar",
+            "La Troncal",
+            "El Tambo",
+            "Déleg",
+            "Suscal",
+          ],
+          Carchi: [
+            "Tulcán",
+            "Bolívar",
+            "Espejo",
+            "Mira",
+            "Montúfar",
+            "San Pedro de Huaca",
+          ],
+          Cotopaxi: [
+            "Latacunga",
+            "La Maná",
+            "Pangua",
+            "Pujili",
+            "Salcedo",
+            "Saquisilí",
+            "Sigchos",
+          ],
+          Chimborazo: [
+            "Riobamba",
+            "Alausi",
+            "Colta",
+            "Chambo",
+            "Chunchi",
+            "Guamote",
+            "Guano",
+            "Pallatanga",
+            "Penipe",
+            "Cumandá",
+          ],
+          "El Oro": [
+            "Machala",
+            "Arenillas",
+            "Atahualpa",
+            "Balsas",
+            "Chilla",
+            "El Guabo",
+            "Huaquillas",
+            "Marcabelí",
+            "Pasaje",
+            "Piñas",
+            "Portovelo",
+            "Santa Rosa",
+            "Zaruma",
+            "Las Lajas",
+          ],
+          Esmeraldas: [
+            "Esmeraldas",
+            "Eloy Alfaro",
+            "Muisne",
+            "Quinindé",
+            "San Lorenzo",
+            "Atacames",
+            "Rioverde",
+            "La Concordia",
+          ],
+          Guayas: [
+            "Guayaquil",
+            "Alfredo Baquerizo Moreno (Juján)",
+            "Balao",
+            "Balzar",
+            "Colimes",
+            "Daule",
+            "Durán",
+            "El Empalme",
+            "El Triunfo",
+            "Milagro",
+            "Naranjal",
+            "Naranjito",
+            "Palestina",
+            "Pedro Carbo",
+            "Samborondón",
+            "Santa Lucía",
+            "Salitre (Urbina Jado)",
+            "San Jacinto de Yaguachi",
+            "Playas",
+            "Simón Bolívar",
+            "Coronel Marcelino Maridueña",
+            "Lomas de Sargentillo",
+            "Nobol",
+            "General Antonio Elizalde",
+            "Isidro Ayora",
+          ],
+          Imbabura: [
+            "Ibarra",
+            "Antonio Ante",
+            "Cotacachi",
+            "Otavalo",
+            "Pimampiro",
+            "San Miguel de Urcuquí",
+          ],
+          Loja: [
+            "Loja",
+            "Calvas",
+            "Catamayo",
+            "Celica",
+            "Chaguarpamba",
+            "Espíndola",
+            "Gonzanamá",
+            "Macará",
+            "Paltas",
+            "Puyango",
+            "Saraguro",
+            "Sozoranga",
+            "Zapotillo",
+            "Pindal",
+            "Quilanga",
+            "Olmedo",
+          ],
+          "Los Rios": [
+            "Babahoyo",
+            "Baba",
+            "Montalvo",
+            "Puebloviejo",
+            "Quevedo",
+            "Urdaneta",
+            "Ventanas",
+            "Vínces",
+            "Palenque",
+            "Buena Fé",
+            "Valencia",
+            "Mocache",
+            "Quinsaloma",
+          ],
+          Manabi: [
+            "Portoviejo",
+            "Bolívar",
+            "Chone",
+            "El Carmen",
+            "Flavio Alfaro",
+            "Jipijapa",
+            "Junín",
+            "Manta",
+            "Montecristi",
+            "Paján",
+            "Pichincha",
+            "Rocafuerte",
+            "Santa Ana",
+            "Sucre",
+            "Tosagua",
+            "24 de Mayo",
+            "Pedernales",
+            "Olmedo",
+            "Puerto López",
+            "Jama",
+            "Jaramijó",
+            "San Vicente",
+          ],
+          "Morona Santiago": [
+            "Morona",
+            "Gualaquiza",
+            "Limón Indanza",
+            "Palora",
+            "Santiago",
+            "Sucúa",
+            "Huamboya",
+            "San Juan Bosco",
+            "Taisha",
+            "Logroño",
+            "Pablo Sexto",
+            "Tiwintza",
+          ],
+          Napo: [
+            "Tena",
+            "Archidona",
+            "El Chaco",
+            "Quijos",
+            "Carlos Julio Arosemena Tola",
+          ],
+          Pastaza: ["Pastaza", "Mera", "Santa Clara", "Arajuno"],
+          Pichincha: [
+            "Quito",
+            "Cayambe",
+            "Mejia",
+            "Pedro Moncayo",
+            "Rumiñahui",
+            "San Miguel de Los Bancos",
+            "Pedro Vicente Maldonado",
+            "Puerto Quito",
+          ],
+          Tungurahua: [
+            "Ambato",
+            "Baños de Agua Santa",
+            "Cevallos",
+            "Mocha",
+            "Patate",
+            "Quero",
+            "San Pedro de Pelileo",
+            "Santiago de Píllaro",
+            "Tisaleo",
+          ],
+          "Zamora Chinchipe": [
+            "Zamora",
+            "Chinchipe",
+            "Nangaritza",
+            "Yacuambi",
+            "Yantzaza (Yanzatza)",
+            "El Pangui",
+            "Centinela del Cóndor",
+            "Palanda",
+            "Paquisha",
+          ],
+          Galápagos: ["San Cristóbal", "Isabela", "Santa Cruz"],
+          Sucumbíos: [
+            "Lago Agrio",
+            "Gonzalo Pizarro",
+            "Putumayo",
+            "Shushufindi",
+            "Sucumbíos",
+            "Cascales",
+            "Cuyabeno",
+          ],
+          Orellana: ["Orellana", "Aguarico", "La Joya de Los Sachas", "Loreto"],
+          "Santo Domingo de Los Tsáchilas": ["Santo Domingo"],
+          "Santa Elena": ["Santa Elena", "La Libertad", "Salinas"],
+          "Zonas No Delimitadas": [
+            "Las Golondrinas",
+            "Manga del Cura",
+            "El Piedrero",
+          ],
+        },
       };
     },
     mounted() {
@@ -414,6 +706,8 @@
             this.abonosValores[10].valor,
             this.abonosValores[11].valor,
           ]),
+          provincia: this.editando.provincia,
+          canton: this.editando.canton,
         };
 
         axios.put("/api/socios", params).then((response) => {
