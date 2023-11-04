@@ -157,7 +157,7 @@
                 Documento</el-button
               >
             </el-col>
-            <el-col :span="4" v-if="type_user != 1 && type_user != 3">
+            <el-col :span="4" v-if="type_user == 1 || type_user == 3">
               <el-button
                 style="width: 100%"
                 type="primary"

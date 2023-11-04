@@ -664,6 +664,7 @@
         this.abonosValores[countIndex].valor = element;
         countIndex++;
       });
+      this.editando.abono = parseInt(this.editando.abono);
     },
 
     methods: {
