@@ -14,8 +14,8 @@ class CreateSociosProvincia extends Migration
   public function up()
   {
     Schema::table("socios", function (Blueprint $table) {
-      $table->string("provincia");
-      $table->string("canton");
+      $table->string("provincia")->nullable();
+      $table->string("canton")->nullable();
     });
   }
 
