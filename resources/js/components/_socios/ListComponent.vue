@@ -493,7 +493,7 @@
 
       generatePartnerFile(id) {
         axios({
-          url: "http://127.0.0.1:8000/api/generatePartnerFile",
+          url: "/api/generatePartnerFile",
           method: "post",
           data: { id: JSON.stringify(id) },
         })
