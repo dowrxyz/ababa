@@ -357,7 +357,7 @@
           { id: 1, nombre: "Militar activo" },
           { id: "2", nombre: "Militar pasivo" },
           { id: 3, nombre: "Policia activo" },
-          { id: 4, nombre: "Policica pasivo" },
+          { id: 4, nombre: "Policia pasivo" },
         ],
         pagos: [
           { id: 1, nombre: "Cancelado" },
