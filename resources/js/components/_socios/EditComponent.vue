@@ -665,6 +665,7 @@
         countIndex++;
       });
       this.editando.abono = parseInt(this.editando.abono);
+      this.editando.tipo = this.editando.tipo.toString();
     },
 
     methods: {
