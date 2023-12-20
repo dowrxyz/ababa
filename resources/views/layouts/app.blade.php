@@ -360,7 +360,7 @@
                                 </a>
                                 @if (Auth::user()->type_user == 1 || Auth::user()->type_user == 3)
                                     <a class="d-flex align-items-center"
-                                        href="{{ route("aportes") }}">
+                                    href="{{ route("socios_tipo", 3) }}">
                                         <i data-feather="circle"></i><span
                                             class="menu-item text-truncate">Aportes</span>
                                     </a>
