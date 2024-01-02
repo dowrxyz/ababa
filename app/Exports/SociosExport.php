@@ -15,6 +15,8 @@ class SociosExport implements FromView
   private $telefono;
   private $usuario;
   private $pago;
+  private $provincia;
+  private $canton;
 
   public function __construct(
     $documento = "",
@@ -22,7 +24,9 @@ class SociosExport implements FromView
     $cuentaBancaria = "",
     $telefono = "",
     $usuario = "",
-    $pago = ""
+    $pago = "",
+    $provincia = "",
+    $canton = ""
   ) {
     $this->documento = $documento;
     $this->nombreSocio = $nombreSocio;
@@ -30,6 +34,8 @@ class SociosExport implements FromView
     $this->telefono = $telefono;
     $this->usuario = $usuario;
     $this->pago = $pago;
+    $this->provincia = $provincia;
+    $this->canton = $canton;
   }
 
   public function view(): View
@@ -40,6 +46,8 @@ class SociosExport implements FromView
     $telefono = $this->telefono;
     $usuario = $this->usuario;
     $pago = $this->pago;
+    $provincia = $this->provincia;
+    $canton = $this->canton;
 
     //por convenio
     if (Auth::user()->tipo_socio == 1) {
@@ -65,6 +73,12 @@ class SociosExport implements FromView
       }
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
+      }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
       }
       $query = $query->orderBy("id", "DESC")->get();
 
@@ -96,6 +110,12 @@ class SociosExport implements FromView
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
       }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
+      }
       $query = $query->orderBy("id", "DESC")->get();
 
       $socios = $query;
@@ -123,6 +143,12 @@ class SociosExport implements FromView
       }
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
+      }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
       }
       $query = $query->orderBy("updated_at", "DESC")->get();
 
@@ -154,6 +180,12 @@ class SociosExport implements FromView
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
       }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
+      }
       $query = $query->orderBy("id", "DESC")->get();
 
       $socios = $query;
@@ -182,6 +214,12 @@ class SociosExport implements FromView
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
       }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
+      }
       $query = $query->orderBy("id", "DESC")->get();
 
       $socios = $query;
@@ -207,6 +245,12 @@ class SociosExport implements FromView
       }
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
+      }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
       }
       $query = $query->orderBy("id", "DESC")->get();
 
@@ -236,6 +280,12 @@ class SociosExport implements FromView
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
       }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
+      }
       $query = $query->orderBy("id", "DESC")->get();
 
       $socios = $query;
@@ -263,6 +313,12 @@ class SociosExport implements FromView
       }
       if (!empty($pago)) {
         $query = $query->where("pago", "=", $pago);
+      }
+      if (!empty($provincia)) {
+        $query = $query->where("provincia", "=", $provincia);
+      }
+      if (!empty($canton)) {
+        $query = $query->where("canton", "=", $canton);
       }
       $query = $query->orderBy("id", "DESC")->get();
 

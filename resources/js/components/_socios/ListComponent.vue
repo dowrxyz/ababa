@@ -7,74 +7,74 @@
         </div>
         <div>2023</div>
       </div>
-      <button class="btn btn-primary float-right" v-on:click="crear()">
+      <button class="btn btn-primary float-right" @click="crear()">
         <i class="fa fa-plus"></i> Agregar Nuevo
       </button>
-      <button class="btn btn-danger float-right" v-on:click="descargar()">
+      <button class="btn btn-danger float-right" @click="descargar()">
         <i class="fa fa-list"></i> Exportar
       </button>
     </div>
     <el-row style="margin-left: 20px; margin-right: 20px" :gutter="10">
       <el-col :span="4">
         <el-input
-          @keyup.enter.native="Search"
-          @clear="Search"
+          v-model="documento"
           size="small"
           placeholder="Documento"
           prefix-icon="el-icon-search"
-          v-model="documento"
           clearable
           class="w-100"
+          @keyup.enter.native="Search"
+          @clear="Search"
         >
         </el-input>
       </el-col>
 
       <el-col :span="4">
         <el-input
-          @keyup.enter.native="Search"
-          @clear="Search"
+          v-model="nombre"
           size="small"
           placeholder="Nombre"
           prefix-icon="el-icon-search"
-          v-model="nombre"
           clearable
           class="w-100"
+          @keyup.enter.native="Search"
+          @clear="Search"
         >
         </el-input>
       </el-col>
 
       <el-col :span="4">
         <el-input
-          @keyup.enter.native="Search"
-          @clear="Search"
+          v-model="cuentaBancaria"
           size="small"
           placeholder="No. Cuenta bancaria"
           prefix-icon="el-icon-search"
-          v-model="cuentaBancaria"
           clearable
           class="w-100"
+          @keyup.enter.native="Search"
+          @clear="Search"
         >
         </el-input>
       </el-col>
 
       <el-col :span="4">
         <el-input
-          @keyup.enter.native="Search"
-          @clear="Search"
+          v-model="telefono"
           size="small"
           placeholder="No. Telefono"
           prefix-icon="el-icon-search"
-          v-model="telefono"
           clearable
           class="w-100"
+          @keyup.enter.native="Search"
+          @clear="Search"
         >
         </el-input>
       </el-col>
 
       <el-col :span="4">
         <el-select
-          class="w-100"
           v-model="usuario"
+          class="w-100"
           placeholder="Usuarios"
           @change="Search()"
         >
@@ -91,8 +91,8 @@
 
       <el-col :span="4">
         <el-select
-          class="w-100"
           v-model="pago"
+          class="w-100"
           placeholder="Tipo de pago"
           @change="Search()"
         >
@@ -115,7 +115,7 @@
         ></span>
       </div>
       <el-table-column type="expand">
-        <template slot-scope="props">
+        <template #default="props">
           <el-row
             style="margin-left: 20px; margin-right: 20px; margin-bottom: 20px"
             :gutter="20"
@@ -157,7 +157,7 @@
                 Documento</el-button
               >
             </el-col>
-            <el-col :span="4" v-if="type_user == 1 || type_user == 3">
+            <el-col v-if="type_user == 1 || type_user == 3" :span="4">
               <el-button
                 style="width: 100%"
                 type="primary"
@@ -248,10 +248,10 @@
       <el-table-column prop="nombres" label="Nombre"> </el-table-column>
       <el-table-column prop="banco.siglas" label="Banco"> </el-table-column>
       <el-table-column prop="saldo" label="Saldo">
-        <template slot-scope="scope"> $ {{ scope.row.saldo }} </template>
+        <template #default="scope"> $ {{ scope.row.saldo }} </template>
       </el-table-column>
       <el-table-column prop="pago" label="Pago">
-        <template slot-scope="scope">
+        <template #default="scope">
           <el-tag :type="scope.row.pago.color" disable-transitions>{{
             scope.row.pago.value
           }}</el-tag>
@@ -259,7 +259,7 @@
       </el-table-column>
 
       <el-table-column prop="estado" label="Estado">
-        <template slot-scope="scope">
+        <template #default="scope">
           <el-tag :type="scope.row.estado.color" disable-transitions>{{
             scope.row.estado.value
           }}</el-tag>
@@ -271,7 +271,7 @@
 
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
-        <li class="page-item" v-if="pagination.current_page > 1">
+        <li v-if="pagination.current_page > 1" class="page-item">
           <a
             class="page-link"
             href="#"
@@ -280,18 +280,18 @@
           >
         </li>
         <li
-          class="page-item"
           v-for="page in pagesNumber"
           :key="page"
-          v-bind:class="[page == isActived ? 'active' : '']"
+          class="page-item"
+          :class="[page == isActived ? 'active' : '']"
         >
           <a class="page-link" href="#" @click.prevent="changePage(page)">
             {{ page }}
           </a>
         </li>
         <li
-          class="page-item"
           v-if="pagination.current_page < pagination.last_page"
+          class="page-item"
         >
           <a
             class="page-link"
@@ -340,12 +340,6 @@
         type_user: $("#type_user").val(),
       };
     },
-
-    mounted() {
-      axios.get("/api/usuariosAdmin").then((response) => {
-        this.usuarios = response.data;
-      });
-    },
     computed: {
       isActived: function () {
         return this.pagination.current_page;
@@ -355,23 +349,29 @@
           return [];
         }
 
-        var from = this.pagination.current_page - this.offset;
+        let from = this.pagination.current_page - this.offset;
         if (from < 1) {
           from = 1;
         }
 
-        var to = from + 2 * this.offset;
+        let to = from + 2 * this.offset;
         if (to > this.pagination.last_page) {
           to = this.pagination.last_page;
         }
 
-        var pagesArray = [];
+        const pagesArray = [];
         while (from <= to) {
           pagesArray.push(from);
           from++;
         }
         return pagesArray;
       },
+    },
+
+    mounted() {
+      axios.get("/api/usuariosAdmin").then((response) => {
+        this.usuarios = response.data;
+      });
     },
     methods: {
       changePage(page) {
@@ -412,8 +412,10 @@
           responseType: "blob",
         })
           .then((response) => {
-            var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-            var fileLink = document.createElement("a");
+            const fileURL = window.URL.createObjectURL(
+              new Blob([response.data])
+            );
+            const fileLink = document.createElement("a");
 
             fileLink.href = fileURL;
             fileLink.setAttribute("download", "documento.pdf");
@@ -431,12 +433,12 @@
         console.log(id);
 
         axios.get("/api/getSocio/" + id).then((response) => {
-          var socio = response.data;
+          const socio = response.data;
           this.$emit("editar", socio);
         });
       },
       aporteClick(id, banco_id) {
-        var socio_id = id;
+        const socio_id = id;
         this.$emit("createAporte", socio_id, banco_id);
       },
       async descargar() {
@@ -447,6 +449,8 @@
           telefono: this.telefono,
           usuario: this.usuario,
           pago: this.pago,
+          provincia: this.provincia,
+          canton: this.canton,
         };
         console.log("ejecutando");
         console.log(params);
@@ -480,8 +484,8 @@
           method: "GET",
           responseType: "blob",
         }).then((response) => {
-          var fileURL = window.URL.createObjectURL(new Blob([response.data]));
-          var fileLink = document.createElement("a");
+          const fileURL = window.URL.createObjectURL(new Blob([response.data]));
+          const fileLink = document.createElement("a");
 
           fileLink.href = fileURL;
           fileLink.setAttribute("download", `${name}.docx`);

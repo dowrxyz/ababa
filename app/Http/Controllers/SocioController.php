@@ -684,8 +684,8 @@ class SocioController extends Controller
     $telefono = $request->telefono;
     $usuario = $request->usuario;
     $pago = $request->pago;
-    $provincia = $request->pago;
-    $canton = $request->pago;
+    $provincia = $request->provincia;
+    $canton = $request->canton;
 
     $nombre = date("YmdHis") . "_socios.xlsx";
     Excel::store(
