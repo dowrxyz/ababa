@@ -20,6 +20,8 @@
             <th>Mies</th>
             <th>Mt</th>
             <th>Creado por</th>
+            <th>Provincia</th>
+            <th>Canton</th>
         </tr>
     </thead>
     <tbody>
@@ -62,6 +64,8 @@
                     @endif
                 </td>
                 <td>{{ $socio->creador["user"] ?? "" }}</td>
+                <td>{{ $socio->provincia }}</td>
+                <td>{{ $socio->canton }}</td>
             </tr>
         @endforeach
     </tbody>

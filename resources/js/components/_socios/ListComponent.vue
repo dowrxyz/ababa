@@ -449,8 +449,6 @@
           telefono: this.telefono,
           usuario: this.usuario,
           pago: this.pago,
-          provincia: this.provincia,
-          canton: this.canton,
         };
         console.log("ejecutando");
         console.log(params);

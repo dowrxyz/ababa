@@ -684,8 +684,6 @@ class SocioController extends Controller
     $telefono = $request->telefono;
     $usuario = $request->usuario;
     $pago = $request->pago;
-    $provincia = $request->provincia;
-    $canton = $request->canton;
 
     $nombre = date("YmdHis") . "_socios.xlsx";
     Excel::store(
@@ -695,9 +693,7 @@ class SocioController extends Controller
         $cuentaBancaria,
         $telefono,
         $usuario,
-        $pago,
-        $provincia,
-        $canton
+        $pago
       ),
       "/socios_Excels/" . $nombre
     );
