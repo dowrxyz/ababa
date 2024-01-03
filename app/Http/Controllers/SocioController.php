@@ -567,12 +567,21 @@ class SocioController extends Controller
 
     $this->storePdf($socio, $nombre);
 
-    Mail::send("mails.userUpdate", ["nombre" => $request->nombres], function (
-      $message
-    ) use ($request) {
-      $message->to($request->correo);
-      $message->subject("Notificacion");
-    });
+    if ($socio->estado["id"] != 2) {
+      Mail::send("mails.userUpdate", ["nombre" => $request->nombres], function (
+        $message
+      ) use ($request) {
+        $message->to($request->correo);
+        $message->subject("Notificacion");
+      });
+    } else {
+      Mail::send("mails.userRemove", ["nombre" => $request->nombres], function (
+        $message
+      ) use ($request) {
+        $message->to($request->correo);
+        $message->subject("Notificacion");
+      });
+    }
 
     return $socio;
   }
