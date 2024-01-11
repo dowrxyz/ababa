@@ -105,26 +105,26 @@
     <b>{{ $socio->banco["nombre"] }}</b> .la cantidad de 84 dólares por derecho
     de inscripción; y, 7 dólares mensuales como cuota y/o aportación, sumado los
     costos bancarios.
-
+    <br>
     Dejo constancia que, en el caso que la Asociación de Militares Nueva Visión
     F.A, no pueda realizar el débito por
     la cantidad 84 dólares por derecho de inscripción; y, 7 dólares mensuales
     como cuota y/o aportación, tienen la opción de realizarme descuentos
     acumulados de 24 dólares en el mes de agosto y 60 dólares en el mes de
     diciembre de cada año, sumado los costos bancarios.
-
+    <br>
     De igual forma me comprometo a mantener los fondos suficientes en mi cuenta
     de ahorros a fin de cubrir los valores cuyo debito autorizo a través de este
     instrumento, valores que me obligo a pagar y autorizo debitar de mi cuenta
     ahorros antes referida, durante el tiempo que subsista la Asociación de
     Militares Nueva Visión F.A.
-
+    <br>
     Además, EXIMO al Banco y/o Cooperativa de toda responsabilidad por los
     descuentos que efectúe la Asociación de Militares Nueva Visión F.A. en
     virtud de la presente autorización de débito, por lo que renuncio a
     presentar por este concepto, cualquier acción judicial o extrajudicial en
     contra del Banco y/o Cooperativa.
-
+    <br>
     En todo caso voluntariamente puedo realizar abonos proporcionales mensuales,
     bimensuales, semestrales o anuales, valores que depositaré a la cuenta de
     ahorros de la Asociación de Militares Nueva Visión F.A.
