@@ -1,10 +1,10 @@
-<img src="logo.png" width="60%" style="margin-left: 10%" alt="">
+<img src="logo.png" width="40%" style="margin-left: 10%" alt="">
 <table style="width: 100%; margin-top: -90px;">
     <tr style="width: 100%">
         <td style="width: 80%"></td>
         <td style="width: 10%">
             <img src="{{ public_path("documentos_imagenes/") . $socio->foto }}"
-                width="100%" alt="">
+                width="60%" alt="">
         </td>
     </tr>
 </table>
@@ -19,7 +19,7 @@
     </tr>
 </table>
 
-<p style="text-align: justify;font-size: 15px;">
+<p style="text-align: justify;font-size: 14px;">
     Presente. <br><br>
     Yo <b>{{ $socio->nombres }}</b> portador (a), del NUI.
     <b>{{ $socio->documento }}</b>, libre y voluntariamente solicito, muy
@@ -29,7 +29,7 @@
     agradecimiento, para lo cual consigno los siguientes datos: .<br>
 </p>
 
-<table class='table' style="width: 100%;font-size: 15px;">
+<table class='table' style="width: 100%;font-size: 13px;">
     <tr style="width: 100%">
         <td style="width: 50%;border: 1px solid"> <b> Email: </b> </td>
         <td style="width: 100%;border: 1px solid"> <b> {{ $socio->correo }} </b>
@@ -61,7 +61,7 @@
                 {{ $socio->movil_referencia }} </b> </td>
         <td style="width: 50%; text-align: center">
             <div
-                style="border-top-style: solid;border-top-width: 1px;border-top-color: black;">
+                style="border-top: 1px solid;border-bottom: 1px solid;border-right: 1px solid;height: 3rem;display: flex;justify-content: flex-end;">
                 firma
             </div>
         </td>
@@ -83,12 +83,12 @@
 </table>
 <br>
 <div style="width: 100%; text-align: center">
-    <b style="text-align: center; font-size: 20px">AUTORIZACION DE DEBITO</b>
+    <b style="text-align: center; font-size: 15px">AUTORIZACION DE DEBITO</b>
     <br>
-    <b style="text-align: center; font-size: 20px">Banco.
+    <b style="text-align: center; font-size: 15px">Banco.
         {{ $socio->banco["nombre"] }}</b> <br>
 </div>
-<table style="width: 100%">
+<table style="width: 100%;font-size: 13px;">
     <tr style="width: 100%">
         <td style="width: 100%">
             Registro: {{ $socio->id }} <br>
@@ -97,7 +97,7 @@
     </tr>
 </table>
 
-<p style="text-align: justify;font-size: 15px;">
+<p style="text-align: justify;font-size: 14px;">
     <br>Yo <b>{{ $socio->nombres }}</b> portador (a), del NUI.
     <b>{{ $socio->documento }}</b>, autorizo a la Asociación de Militares Nueva
     Visión F.A., se debite de mi
@@ -106,6 +106,7 @@
     de inscripción; y, 7 dólares mensuales como cuota y/o aportación, sumado los
     costos bancarios.
     <br>
+    <br>
     Dejo constancia que, en el caso que la Asociación de Militares Nueva Visión
     F.A, no pueda realizar el débito por
     la cantidad 84 dólares por derecho de inscripción; y, 7 dólares mensuales
@@ -113,11 +114,13 @@
     acumulados de 24 dólares en el mes de agosto y 60 dólares en el mes de
     diciembre de cada año, sumado los costos bancarios.
     <br>
+    <br>
     De igual forma me comprometo a mantener los fondos suficientes en mi cuenta
     de ahorros a fin de cubrir los valores cuyo debito autorizo a través de este
     instrumento, valores que me obligo a pagar y autorizo debitar de mi cuenta
     ahorros antes referida, durante el tiempo que subsista la Asociación de
     Militares Nueva Visión F.A.
+    <br>
     <br>
     Además, EXIMO al Banco y/o Cooperativa de toda responsabilidad por los
     descuentos que efectúe la Asociación de Militares Nueva Visión F.A. en
@@ -125,12 +128,13 @@
     presentar por este concepto, cualquier acción judicial o extrajudicial en
     contra del Banco y/o Cooperativa.
     <br>
+    <br>
     En todo caso voluntariamente puedo realizar abonos proporcionales mensuales,
     bimensuales, semestrales o anuales, valores que depositaré a la cuenta de
     ahorros de la Asociación de Militares Nueva Visión F.A.
 </p>
 
-<table class='table' style="width: 100%;font-size: 15px;">
+<table class='table' style="width: 100%;font-size: 13px;">
     <tr style="width: 100%">
         <td style="width: 50%;border: 1px solid"> <b> Email: </b> </td>
         <td style="width: 100%;border: 1px solid"> <b> {{ $socio->correo }}
@@ -158,7 +162,7 @@
                 {{ $socio->movil_referencia }} </b> </td>
         <td style="width: 50%; text-align: center">
             <div
-                style="border-top-style: solid;border-top-width: 1px;border-top-color: black;">
+                style="border-top: 1px solid;border-bottom: 1px solid;border-right: 1px solid;height: 3rem;display: flex;justify-content: flex-end;">
                 firma
             </div>
         </td>
