@@ -1,10 +1,10 @@
-<img src="logo.png" width="40%" style="margin-left: 10%" alt="">
+<img src="logo.png" width="60%" style="margin-left: 10%" alt="">
 <table style="width: 100%; margin-top: -90px;">
     <tr style="width: 100%">
         <td style="width: 80%"></td>
         <td style="width: 10%">
             <img src="{{ public_path("documentos_imagenes/") . $socio->foto }}"
-                width="60%" alt="">
+                width="100%" alt="">
         </td>
     </tr>
 </table>
@@ -15,12 +15,12 @@
             Fecha: {{ date_format($socio->created_at, "Y/m/d H:i:s") }} <br><br>
             <b> Sr. Presidente </b> de la Asociación de Militares Nueva Visión
             F.A.
+            Presente.
         </td>
     </tr>
 </table>
 
 <p style="text-align: justify;font-size: 14px;">
-    Presente. <br><br>
     Yo <b>{{ $socio->nombres }}</b> portador (a), del NUI.
     <b>{{ $socio->documento }}</b>, libre y voluntariamente solicito, muy
     comedidamente a usted señor
@@ -88,15 +88,6 @@
     <b style="text-align: center; font-size: 15px">Banco.
         {{ $socio->banco["nombre"] }}</b> <br>
 </div>
-<table style="width: 100%;font-size: 13px;">
-    <tr style="width: 100%">
-        <td style="width: 100%">
-            Registro: {{ $socio->id }} <br>
-            Fecha: {{ date("Y/m/d H:i:s") }} <br>
-        </td>
-    </tr>
-</table>
-
 <p style="text-align: justify;font-size: 14px;">
     <br>Yo <b>{{ $socio->nombres }}</b> portador (a), del NUI.
     <b>{{ $socio->documento }}</b>, autorizo a la Asociación de Militares Nueva
@@ -146,26 +137,6 @@
         <td style="width: 50%;border: 1px solid"> <b> {{ $socio->movil }} </b>
         </td>
         <td style="width: 50%"> </td>
-    </tr>
-    <tr style="width: 100%">
-        <td style="width: 50%;border: 1px solid"> <b> Nombre Referencia: </b>
-        </td>
-        <td style="width: 100%;border: 1px solid"> <b>
-                {{ $socio->nombres_referencia }} </b>
-        </td>
-        <td style="width: 50%"> </td>
-    </tr>
-    <tr style="width: 100%">
-        <td style="width: 50%;border: 1px solid"> <b> Numero Referencia: </b>
-        </td>
-        <td style="width: 50%;border: 1px solid"> <b>
-                {{ $socio->movil_referencia }} </b> </td>
-        <td style="width: 50%; text-align: center">
-            <div
-                style="border-top: 1px solid;border-bottom: 1px solid;border-right: 1px solid;height: 3rem;display: flex;justify-content: flex-end;">
-                firma
-            </div>
-        </td>
     </tr>
     <tr style="width: 100%">
         <td style="width: 50%;border: 1px solid"> <b> Estado / Fuerza: </b>
