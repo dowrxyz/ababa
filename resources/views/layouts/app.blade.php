@@ -311,6 +311,12 @@
                                         de socios</span>
                                 </a>
                                 <a class="d-flex align-items-center"
+                                   href="{{ route("historicodos", 6) }}">
+                                    <i data-feather="circle"></i><span
+                                        class="menu-item text-truncate">Histórico
+                                        2023</span>
+                                </a>
+                                <a class="d-flex align-items-center"
                                     href="{{ route("historico", 6) }}">
                                     <i data-feather="circle"></i><span
                                         class="menu-item text-truncate">Histórico
