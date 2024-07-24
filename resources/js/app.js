@@ -279,6 +279,28 @@ Vue.component(
   "historico-show-component",
   require("./components/_historico/ShowComponent.vue").default
 );
+
+// 2023
+
+
+Vue.component(
+    "historicodos-component",
+    require("./components/HistoricoDosComponent.vue").default
+);
+Vue.component(
+    "historicodos-list-component",
+    require("./components/_historico/ListComponent.vue").default
+);
+// Vue.component( 'historico-create-component',  require( './components/_historico/CreateComponent.vue' ).default);
+Vue.component(
+    "historicodos-edit-component",
+    require("./components/_historico/EditComponent.vue").default
+);
+Vue.component(
+    "historicodos-show-component",
+    require("./components/_historico/ShowComponent.vue").default
+);
+
 //Fin Modulo Historico
 
 const app = new Vue({
