@@ -62,3 +62,8 @@ Route::get('historico_tipo/{valor}', [HistoricoController::class, 'socios_tipo']
 Route::get('historico', [HistoricoController::class, 'index'])->name('historico');
 Route::get('historico/listado', [HistoricoController::class, 'show']);
 Route::post('historico/buscar', [HistoricoController::class, 'buscarSocio']);
+
+Route::get('historico_tipo/{valor}', [HistoricoDosController::class, 'socios_tipo'])->name('historico_tipo');
+Route::get('historicodos', [HistoricoDosController::class, 'index'])->name('historicodos');
+Route::get('historicodos/listado', [HistoricoDosController::class, 'show']);
+Route::post('historicodos/buscar', [HistoricoDosController::class, 'buscarSocio']);
